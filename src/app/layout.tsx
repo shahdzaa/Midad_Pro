@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import Hero from '../components/Hero';
+import CoursesSection from '../components/CoursesSection';
+import CoursesCategory from '../components/CoursesCategory';
+import Testimonials from '../components/Testimonials';  
 import "./globals.css";
+import { Varela_Round } from 'next/font/google'; // استيراد الخط
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+// تعريف الخط
+const varelaRound = Varela_Round({
+  weight: '400', // الخط في التصميم يبدو بوزن عادي
+  subsets: ['latin'],
+  variable: '--font-varela-round', // تعريف متغير CSS لاستخدامه في Tailwind
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,12 +27,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" className={`${varelaRound.variable}`}>
+          <>
+          <body>
+            
+          
+      <Navbar />
+      <Hero />
+      <CoursesSection />
+      <CoursesCategory />
+      <Testimonials />
+      <Footer />
       </body>
+    </>
     </html>
   );
 }
