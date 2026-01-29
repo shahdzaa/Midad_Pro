@@ -33,10 +33,7 @@ export default function RootLayout({
             
           
       <Navbar />
-      <Hero />
-      <CoursesSection />
-      <CoursesCategory />
-      <Testimonials />
+      {children}
       <Footer />
       </body>
     </>
