@@ -8,8 +8,8 @@ export default function Home() {
     <div className="bg-zinc-50 font-sans">
       <Hero />
       <CoursesSection />
-      <CoursesCategory />
       <Testimonials />
+      <CoursesCategory />
     </div>
   );
 }
