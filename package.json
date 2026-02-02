@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "mock-api": "json-server --watch db.json --port 4000",
     "lint": "eslint"
   },
   "dependencies": {

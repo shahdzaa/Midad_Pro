@@ -1,3 +1,5 @@
+
+import Link from "next/link";
 export default function Navbar() {
   return (
     <nav className="flex items-center justify-between px-10 py-6">
@@ -8,7 +10,7 @@ export default function Navbar() {
         <li>About us</li>
         <li>Courses</li>
         <li>Our Service</li>
-        <li>Contact us</li>
+        <li>Profile</li>
       </ul>
 
       <button className="bg-purple-600 text-white px-5 py-2 rounded-full">

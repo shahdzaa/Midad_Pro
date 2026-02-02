@@ -6,14 +6,7 @@ import CoursesSection from '../components/CoursesSection';
 import CoursesCategory from '../components/CoursesCategory';
 import Testimonials from '../components/Testimonials';  
 import "./globals.css";
-import { Varela_Round } from 'next/font/google'; // استيراد الخط
-
-// تعريف الخط
-const varelaRound = Varela_Round({
-  weight: '400', // الخط في التصميم يبدو بوزن عادي
-  subsets: ['latin'],
-  variable: '--font-varela-round', // تعريف متغير CSS لاستخدامه في Tailwind
-});
+// Removed Google font import to avoid network fetch during build
 
 
 export const metadata: Metadata = {
@@ -27,19 +20,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${varelaRound.variable}`}>
-          <>
-          <body>
-            
-          
-      <Navbar />
-      <Hero />
-      <CoursesSection />
-      <CoursesCategory />
-      <Testimonials />
-      <Footer />
+    <html lang="en">
+      <body className="min-h-screen">
+        <Navbar />
+        {/* <Hero />
+        <CoursesSection />
+        <CoursesCategory />
+        <Testimonials /> */}
+        {children}
+        <Footer />
       </body>
-    </>
     </html>
   );
 }

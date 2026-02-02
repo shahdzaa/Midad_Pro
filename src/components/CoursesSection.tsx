@@ -1,24 +1,33 @@
+"use client";
+
+import React, { useEffect, useState } from "react";
 import CourseCard from "./CourseCard";
+import fallbackCourses from "../data/courses";
 
-async function getCourses() {
-  try {
-    const res = await fetch("http://localhost:4000/courses", {
-      cache: "no-store",
-    });
+export default function CoursesSection() {
+  const [courses, setCourses] = useState(fallbackCourses);
 
-    if (!res.ok) {
-      throw new Error("Failed to fetch courses");
+  useEffect(() => {
+    let mounted = true;
+
+    async function fetchCourses() {
+      try {
+        const res = await fetch("http://localhost:4000/courses");
+        if (!res.ok) return;
+        const data = await res.json();
+        if (mounted && Array.isArray(data) && data.length > 0) {
+          setCourses(data);
+        }
+      } catch (e) {
+        // silent fallback to local data
+      }
     }
 
-    return res.json();
-  } catch (error) {
-    console.error("Error fetching courses:", error);
-    return [];
-  }
-}
-
-export default async function CoursesSection() {
-  const courses = await getCourses();
+    fetchCourses();
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   return (
     <section className="px-10 py-20">
@@ -30,7 +39,7 @@ export default async function CoursesSection() {
         {courses.length === 0 ? (
           <p className="text-gray-500">No courses found.</p>
         ) : (
-          courses.map((course: any) => (
+          courses.map((course) => (
             <CourseCard
               key={course.id}
               title={course.title}
