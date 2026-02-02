@@ -24,16 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${varelaRound.variable}`}>
-          <>
-          <body>
-            
-          
-      <Navbar />
-      <Hero />
-      <CoursesSection />
-      <CoursesCategory />
-      <Testimonials />
-      <Footer />
+      <body>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

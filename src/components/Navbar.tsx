@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-
 import Link from "next/link";
-=======
-import Link from 'next/link';
-
->>>>>>> 76b9e632c978548b34b797b233a8d927f52b7533
 export default function Navbar() {
   return (
     <nav className="flex items-center justify-between px-10 py-6 bg-white shadow-sm">
@@ -14,14 +8,6 @@ export default function Navbar() {
         </Link>
       </div>
 
-<<<<<<< HEAD
-      <ul className="hidden md:flex gap-8 text-gray-600">
-        <li>Home</li>
-        <li>About us</li>
-        <li>Courses</li>
-        <li>Our Service</li>
-        <li>Profile</li>
-=======
       <ul className="hidden md:flex gap-8 text-gray-600 font-medium">
         <li>
           <Link href="/" className="hover:text-purple-600 transition-colors">Home</Link>
@@ -38,7 +24,6 @@ export default function Navbar() {
         <li>
           <Link href="/contact" className="hover:text-purple-600 transition-colors">Contact us</Link>
         </li>
->>>>>>> 76b9e632c978548b34b797b233a8d927f52b7533
       </ul>
 
       <div className="flex items-center">

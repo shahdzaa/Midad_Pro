@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import CourseCard from "./CourseCard";
-import fallbackCourses from "../data/courses";
+import fallbackCourses from "../../data/courses";
 
 export default function CoursesSection() {
   const [courses, setCourses] = useState(fallbackCourses);
