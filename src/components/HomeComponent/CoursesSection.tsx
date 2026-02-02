@@ -37,6 +37,7 @@ export default async function CoursesSection() {
               price={`$${course.price}`}
               rating={course.rating}
               image={course.image}
+              href={`/courses/${  course.id}`}
             />
           ))
         )}

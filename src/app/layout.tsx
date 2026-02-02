@@ -1,20 +1,13 @@
 import type { Metadata } from "next";
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import Hero from '../components/Hero';
-import CoursesSection from '../components/CoursesSection';
-import CoursesCategory from '../components/CoursesCategory';
-import Testimonials from '../components/Testimonials';  
+import Footer from '../components/Footer'; 
 import "./globals.css";
-import { Varela_Round } from 'next/font/google'; // استيراد الخط
-
-// تعريف الخط
+import { Varela_Round } from 'next/font/google'; 
 const varelaRound = Varela_Round({
-  weight: '400', // الخط في التصميم يبدو بوزن عادي
+  weight: '400', 
   subsets: ['latin'],
-  variable: '--font-varela-round', // تعريف متغير CSS لاستخدامه في Tailwind
+  variable: '--font-varela-round', 
 });
-
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,15 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${varelaRound.variable}`}>
-          <>
-          <body>
-            
-          
-      <Navbar />
-      {children}
-      <Footer />
+      <body>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
-    </>
     </html>
   );
 }
