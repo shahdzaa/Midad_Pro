@@ -10,7 +10,7 @@ export default function Navbar() {
 
       <ul className="hidden md:flex gap-8 text-gray-600 font-medium">
         <li>
-          <Link href="/" className="hover:text-purple-600 transition-colors">Home</Link>
+           <Link href="/" className="hover:text-purple-600 transition-colors">Home</Link>
         </li>
         <li>
           <Link href="/about" className="hover:text-purple-600 transition-colors">About us</Link>
@@ -23,6 +23,9 @@ export default function Navbar() {
         </li>
         <li>
           <Link href="/contact" className="hover:text-purple-600 transition-colors">Contact us</Link>
+        </li>
+        <li>
+          <Link href="/student/profile" className="hover:text-purple-600 transition-colors">Profile</Link>
         </li>
       </ul>
 

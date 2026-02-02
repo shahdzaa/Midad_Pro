@@ -10,7 +10,7 @@ export default function SidebarStudent() {
       
       <nav className="space-y-2">
         <Link 
-          href="/student" 
+          href="/home" 
           className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-purple-700 transition"
         >
           <Home size={20} />
@@ -18,7 +18,7 @@ export default function SidebarStudent() {
         </Link>
         
         <Link 
-          href="/student/courses" 
+          href="courses" 
           className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-purple-700 transition"
         >
           <BookOpen size={20} />
