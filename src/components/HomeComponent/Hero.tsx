@@ -1,11 +1,6 @@
 import Image from "next/image";
 
-interface HeroImage {
-  src: string;
-  alt: string;
-}
-
-const heroImages: HeroImage[] = [
+const heroImages = [
   {
     src: "./images/hero1.jpg",
     alt: "Web Development",

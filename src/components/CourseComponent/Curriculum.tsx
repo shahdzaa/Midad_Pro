@@ -1,11 +1,16 @@
-type CurriculumModule = {
+// في Curriculum.tsx - غير Interface
+type LessonType = {
   title: string;
-  lessons?: string[]; // اختياري: إذا بدك تفصيل جوّا كل module
+  duration?: string;  // اختياري
+  type?: string;      // اختياري
 };
 
 interface CurriculumProps {
   title?: string;
-  modules: CurriculumModule[];
+  modules: {
+    title: string;
+    lessons?: LessonType[];  // 👈 غير من string[] إلى LessonType[]
+  }[];
   className?: string;
 }
 
@@ -36,9 +41,24 @@ export default function Curriculum({
             {m.lessons?.length ? (
               <ul className="mt-3 space-y-2 text-sm text-gray-600">
                 {m.lessons.map((lesson, idx) => (
-                  <li key={`${lesson}-${idx}`} className="flex gap-2">
-                    <span className="text-purple-600">•</span>
-                    <span>{lesson}</span>
+                  <li 
+                    key={`${lesson.title}-${idx}`} 
+                    className="flex items-center gap-3 py-2 border-b border-gray-100 last:border-0"
+                  >
+                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                    <div className="flex-1">
+                      <span className="font-medium">{lesson.title}</span>
+                      {lesson.duration && (
+                        <span className="text-xs text-gray-500 ml-2">
+                          ({lesson.duration})
+                        </span>
+                      )}
+                    </div>
+                    {lesson.type && (
+                      <span className="text-xs px-2 py-1 bg-gray-100 rounded-full">
+                        {lesson.type}
+                      </span>
+                    )}
                   </li>
                 ))}
               </ul>
