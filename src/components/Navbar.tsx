@@ -8,14 +8,6 @@ export default function Navbar() {
           <h1 className="text-2xl font-bold text-purple-600 cursor-pointer">Masar</h1>
         </Link>
       </div>
-
-      <ul className="hidden md:flex gap-8 text-gray-600">
-        <li>Home</li>
-        <li>About us</li>
-        <li>Courses</li>
-        <li>Our Service</li>
-        <li>Profile</li>
-        </ul>
       <ul className="hidden md:flex gap-8 text-gray-600 font-medium">
         <li>
            <Link href="/" className="hover:text-purple-600 transition-colors">Home</Link>
