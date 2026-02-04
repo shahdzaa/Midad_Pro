@@ -5,11 +5,13 @@ import CoursesCategory from "../components/HomeComponent/CoursesCategory";
 import Testimonials from "../components/HomeComponent/Testimonials";
 export default function Home() {
   return (
-    <div className="bg-zinc-50 font-sans">
+    <div className="bg-zinc-50 font-sans bg-gradient-to-b from-purple-50 to-white">
+      <main>
       <Hero />
       <CoursesSection />
-      <Testimonials />
       <CoursesCategory />
+      <Testimonials />
+      </main>
     </div>
   );
 }

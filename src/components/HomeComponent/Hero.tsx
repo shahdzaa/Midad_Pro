@@ -50,9 +50,12 @@ export default function Hero() {
           <button className="bg-purple-600 text-white px-6 py-3 rounded-full">
             Start Your Exam
           </button>
-          <button className="border px-6 py-3 rounded-full">
-            Browse All Courses
-          </button>
+          <a
+              href="/courses"
+              className="border px-6 py-3 rounded-full"
+            >
+              Browse Courses
+            </a>
         </div>
       </div>
 

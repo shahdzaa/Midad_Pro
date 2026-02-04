@@ -10,7 +10,8 @@ async function getCourses() {
       throw new Error("Failed to fetch courses");
     }
 
-    return res.json();
+    const data = await res.json();
+    return data.slice(-8 ).reverse();
   } catch (error) {
     console.error("Error fetching courses:", error);
     return [];

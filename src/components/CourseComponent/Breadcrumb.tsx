@@ -2,7 +2,7 @@ import Link from "next/link";
 
 type BreadcrumbItem = {
   label: string;
-  href?: string; // إذا موجودة بصير العنصر لينك
+  href?: string; 
 };
 
 interface BreadcrumbProps {

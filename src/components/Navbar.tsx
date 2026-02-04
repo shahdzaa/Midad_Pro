@@ -1,5 +1,5 @@
-import Link from 'next/link';
 
+import Link from 'next/link';
 export default function Navbar() {
   return (
     <nav className="flex items-center justify-between px-10 py-6 bg-white shadow-sm">
@@ -8,7 +8,6 @@ export default function Navbar() {
           <h1 className="text-2xl font-bold text-purple-600 cursor-pointer">Masar</h1>
         </Link>
       </div>
-
       <ul className="hidden md:flex gap-8 text-gray-600 font-medium">
         <li>
           <Link href="/" className="hover:text-purple-600 transition-colors">Home</Link>
@@ -20,17 +19,13 @@ export default function Navbar() {
           <Link href="/courses" className="hover:text-purple-600 transition-colors">Courses</Link>
         </li>
         <li>
-          <Link href="/services" className="hover:text-purple-600 transition-colors">Our Service</Link>
-        </li>
-        <li>
           <Link href="/contact" className="hover:text-purple-600 transition-colors">Contact us</Link>
         </li>
       </ul>
 
       <div className="flex items-center">
-        <button className="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition-colors font-medium">
-          Sign in
-        </button>
+        
+        <Link href="/profile" className="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition-colors font-medium">Profile</Link>
       </div>
     </nav>
   );
